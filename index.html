@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Statistical Analysis Module v4.0</title>
+    <link rel="stylesheet" href="./style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrS49uY/o4t32iUfS/P6g9XjC0PjX0qU0c+6S/P4uQ10sN6M4w+3B/0WbL1vE4K3" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-M/y/k/Sj2M1Jz6S9D0p7r0xVf/g5I3/F2N4z4s5P6z2N4B3" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-Fk5v6+9u4h62eT+3M3t/G4f5F2N4z4s5P6z2N4B3R4/S6W+7g3L6H8Q+5G4D8H3" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+    </head>
+    
+  <body>
+  <div class="console-container">
+  <div class="header">
+    <h1>Statistical Analysis Module v4.0</h1>
+    <p class="status">STATUS: ONLINE / READY</p>
+  </div>
+  
+  <div id="data-entry">
+    <div class="group-panel" id="group-1">
+      <h2>// GROUP 1 DATA</h2>
+      <div class="input-line">
+        <label for="mean1">Mean (x&#x0304;<sub>1</sub>)</label>
+        <input type="number" id="mean1" value="25.5" step="0.1">
+      </div>
+      <div class="input-line variance-input t-test-only">
+        <label for="std1">Sample Std Dev (s<sub>1</sub>)</label>
+        <input type="number" id="std1" value="5.2" step="0.1">
+      </div>
+      <div class="input-line variance-input z-test-only hidden">
+        <label for="popStd1">Pop Std Dev ($\sigma_1$)</label>
+        <input type="number" id="popStd1" value="5.5" step="0.1">
+      </div>
+      <div class="input-line">
+        <label for="n1">N (n<sub>1</sub>)</label>
+        <input type="number" id="n1" value="30" step="1" min="2">
+      </div>
+    </div>
+
+    <div class="group-panel" id="group-2">
+      <h2>// GROUP 2 DATA</h2>
+      <div class="input-line">
+        <label for="mean2">Mean (x&#x0304;<sub>2</sub>)</label>
+        <input type="number" id="mean2" value="22.1" step="0.1">
+      </div>
+      <div class="input-line variance-input t-test-only">
+        <label for="std2">Sample Std Dev (s<sub>2</sub>)</label>
+        <input type="number" id="std2" value="4.8" step="0.1">
+      </div>
+       <div class="input-line variance-input z-test-only hidden">
+        <label for="popStd2">Pop Std Dev ($\sigma_2$)</label>
+        <input type="number" id="popStd2" value="5.0" step="0.1">
+      </div>
+      <div class="input-line">
+        <label for="n2">N (n<sub>2</sub>)</label>
+        <input type="number" id="n2" value="35" step="1" min="2">
+      </div>
+    </div>
+  </div>
+
+  <div class="test-type-selection">
+    <label>SELECT ANALYSIS TYPE</label>
+    <div class="radio-group main-test-group">
+      <input type="radio" id="z_test" name="testType" value="z_test">
+      <label for="z_test">Z-TEST (Uses Pop. Std. Dev.)</label>
+      
+      <input type="radio" id="t_pooled" name="testType" value="t_pooled" checked>
+      <label for="t_pooled">T-TEST (Pooled Variance)</label>
+
+      <input type="radio" id="t_welch" name="testType" value="t_welch">
+      <label for="t_welch">T-TEST (Welch's/Unequal Variance)</label>
+    </div>
+  </div>
+  
+  <div class="alpha-input-line">
+    <label for="alpha-level">SIGNIFICANCE LEVEL (α)</label>
+    <input type="number" id="alpha-level" value="0.05" step="0.01" min="0.01" max="0.1">
+  </div>
+  
+  <button onclick="runAnalysis()">:: EXECUTE ANALYSIS ALGORITHM ::</button>
+  
+  <div id="results">
+    <h2>// ANALYSIS OUTPUT</h2>
+  </div>
+
+</div>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>

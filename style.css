@@ -1,0 +1,302 @@
+/* Base Style & Background */
+body {
+  font-family: 'Consolas', 'Courier New', monospace; /* Monospace font for console feel */
+  background-color: #0d1117; /* Dark charcoal background */
+  color: #00ff66; /* Neon green text color */
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Main Container - The "Console" Box */
+.console-container {
+  max-width: 800px;
+  width: 95%;
+  background: #161b22; /* Slightly lighter console background */
+  padding: 40px;
+  border: 1px solid #004d20; /* Dark green border */
+  box-shadow: 0 0 15px #00ff6655, inset 0 0 10px #00ff6622; /* Subtle neon glow effect */
+  border-radius: 6px;
+}
+
+/* Header & Status */
+.header h1 {
+  color: #61dafb; /* Cyan for main titles */
+  border-bottom: 2px solid #00ff66;
+  padding-bottom: 5px;
+  margin-top: 0;
+}
+
+.status {
+  font-size: 0.8em;
+  color: #00ff66;
+  text-shadow: 0 0 5px #00ff66;
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: #61dafb; /* Cyan for subtitles */
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+/* Input Fields Layout */
+#data-entry {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px; 
+}
+
+.group-panel {
+  flex-basis: 48%;
+  padding: 15px;
+  border: 1px dashed #004d20; /* Dashed separator */
+}
+
+.input-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+  flex-basis: 40%;
+  color: #fff; /* White for better readability against neon */
+}
+
+input[type="number"] {
+  flex-basis: 55%;
+  padding: 8px;
+  border: 1px solid #00ff66;
+  background-color: #0d1117; 
+  color: #00ff66; 
+  border-radius: 2px;
+  text-align: right;
+  font-family: 'Consolas', 'Courier New', monospace;
+  box-shadow: 0 0 5px #00ff6655; /* Input glow */
+}
+
+/* Alpha Input Styling */
+.alpha-input-line {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 10px 0;
+  border-top: 1px dashed #004d20;
+  border-bottom: 1px dashed #004d20;
+}
+
+.alpha-input-line label {
+  flex-basis: 40%;
+  font-size: 1.1em;
+  color: #f7b731; /* Amber for importance */
+}
+
+.alpha-input-line input[type="number"] {
+  flex-basis: 20%;
+  text-align: center;
+  border-color: #f7b731;
+  box-shadow: 0 0 5px #f7b73155;
+}
+
+/* T-Test Type Selection Styling */
+.test-type-selection {
+  margin-bottom: 20px;
+  padding: 10px 0;
+  border-top: 1px dashed #004d20;
+  border-bottom: 1px dashed #004d20;
+}
+
+.test-type-selection label:first-child {
+  display: block;
+  font-size: 1.1em;
+  color: #f7b731; 
+  margin-bottom: 10px;
+}
+
+.radio-group {
+    display: flex; /* Use flex to wrap the radio options */
+    flex-wrap: wrap; 
+    gap: 15px;
+}
+
+.radio-group .radio-option {
+    display: inline-flex;
+    align-items: center;
+}
+
+.radio-group input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.radio-group label {
+  position: relative;
+  padding-left: 25px; 
+  cursor: pointer;
+  font-size: 0.9em;
+  color: #fff;
+  font-weight: normal;
+}
+
+.radio-group label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 14px;
+  width: 14px;
+  background-color: #161b22;
+  border: 1px solid #61dafb;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #61dafb55;
+}
+
+.radio-group label::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 8px;
+  width: 8px;
+  background-color: #61dafb;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.radio-group input[type="radio"]:checked + label::after {
+  opacity: 1;
+}
+
+/* Utility Class */
+.hidden {
+    display: none !important;
+}
+
+/* Button */
+button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: #61dafb; 
+  color: #161b22; 
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1em;
+  font-family: 'Consolas', 'Courier New', monospace;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 10px #61dafb88;
+}
+
+button:hover {
+  background-color: #00c7e5;
+  box-shadow: 0 0 15px #00c7e5;
+}
+
+/* Results Area */
+#results {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #00ff66;
+}
+
+
+/* --- STEP-BY-STEP OUTPUT STYLES --- */
+
+.step {
+    margin-top: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #004d20;
+}
+
+.step:last-child {
+    border-bottom: none; 
+}
+
+.step h3 {
+    color: #00ff66; 
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.step p {
+    margin: 5px 0;
+    padding-left: 20px; 
+}
+
+.step ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.step li {
+    margin-bottom: 5px;
+    color: #00ff66; 
+}
+
+.math-var {
+    color: #61dafb; 
+}
+
+.result-value {
+    color: #f7b731; 
+    font-weight: bold;
+}
+
+.highlight {
+    color: #ff5757; 
+    font-weight: bold;
+}
+
+.operator {
+    color: #ff5757; 
+    font-weight: bold;
+}
+
+.math-output {
+    /* Styles for displaying the LaTeX formula block */
+    padding: 10px;
+    background: #0d1117; 
+    margin: 10px 0 10px 20px;
+    border: 1px solid #004d20;
+    border-radius: 4px;
+    color: #fff; 
+    font-size: 1.1em;
+    text-align: center;
+}
+
+/* The final conclusion block, matching the green ">" style */
+.final-conclusion {
+    padding: 5px 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.final-conclusion p {
+    padding: 0;
+    margin: 0;
+}
+
+/* Colors used by JavaScript for the conclusion */
+.final-conclusion.conclusion-reject {
+  color: #ff5757; 
+  text-shadow: 0 0 5px #ff575755;
+}
+
+.final-conclusion.conclusion-fail-reject {
+  color: #00ff66; 
+  text-shadow: 0 0 5px #00ff6655;
+}
